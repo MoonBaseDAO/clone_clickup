@@ -1,0 +1,26 @@
+{
+  "name": "near-nextjs-template",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build-contract": "asb --target debug",
+    "deploy-contract": "yarn build-contract && near dev-deploy ./build/debug/contract.wasm",
+    "clean-contract" : "rm -rf ./build && rm -rf ./neardev",
+    "run-contract"  : "./contract/scripts/run.sh",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "near-api-js": "^0.44.2",
+    "next": ">=12.0.9",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-spinners": "^0.11.0"
+  },
+  "devDependencies": {
+    "near-sdk-as": "^3.2.3",
+    "eslint": "8.7.0",
+    "eslint-config-next": "12.0.8"
+  }
+}
